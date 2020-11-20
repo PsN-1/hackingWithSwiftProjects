@@ -11,7 +11,8 @@ import WebKit
 class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "hackingwithswift.com"]
+    var websites = K.websites
+    var selectedSite = ""
     
     override func loadView() {
         webView = WKWebView()
@@ -26,17 +27,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        let goBack = UIBarButtonItem(barButtonSystemItem: .reply, target: webView, action: #selector(webView.goBack))
+        let goFoward = UIBarButtonItem(barButtonSystemItem: .fastForward, target: webView, action: #selector(webView.goForward))
         
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
         let progressButton = UIBarButtonItem(customView: progressView)
         
-        toolbarItems = [progressButton ,spacer, refresh]
+        toolbarItems = [progressButton ,spacer, refresh, spacer, goBack, spacer, goFoward]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + selectedSite)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
         
@@ -79,6 +82,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 }
             }
         }
+        
+        let alert = UIAlertController(title: "Sorry, it's blocked", message: "The url you're attempting to access it's not allowed", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok, my bad!", style: .default, handler: nil))
+        self.present(alert, animated: true)
+        
         decisionHandler(.cancel)
     }
 }

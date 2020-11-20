@@ -13,6 +13,8 @@
 		66C3CB80256004280021D652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C3CB7E256004280021D652 /* Main.storyboard */; };
 		66C3CB82256004290021D652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66C3CB81256004290021D652 /* Assets.xcassets */; };
 		66C3CB852560042A0021D652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C3CB832560042A0021D652 /* LaunchScreen.storyboard */; };
+		66FE5B3C2567F12C0076296F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE5B3B2567F12C0076296F /* TableViewController.swift */; };
+		66FE5B3F25681DE40076296F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE5B3E25681DE40076296F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		66C3CB81256004290021D652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66C3CB842560042A0021D652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66C3CB862560042A0021D652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66FE5B3B2567F12C0076296F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		66FE5B3E25681DE40076296F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				66C3CB78256004280021D652 /* AppDelegate.swift */,
 				66C3CB7A256004280021D652 /* SceneDelegate.swift */,
 				66C3CB7C256004280021D652 /* ViewController.swift */,
+				66FE5B3B2567F12C0076296F /* TableViewController.swift */,
 				66C3CB7E256004280021D652 /* Main.storyboard */,
 				66C3CB81256004290021D652 /* Assets.xcassets */,
 				66C3CB832560042A0021D652 /* LaunchScreen.storyboard */,
 				66C3CB862560042A0021D652 /* Info.plist */,
+				66FE5B3E25681DE40076296F /* Constants.swift */,
 			);
 			path = Project4;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 				66C3CB7D256004280021D652 /* ViewController.swift in Sources */,
 				66C3CB79256004280021D652 /* AppDelegate.swift in Sources */,
 				66C3CB7B256004280021D652 /* SceneDelegate.swift in Sources */,
+				66FE5B3F25681DE40076296F /* Constants.swift in Sources */,
+				66FE5B3C2567F12C0076296F /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
