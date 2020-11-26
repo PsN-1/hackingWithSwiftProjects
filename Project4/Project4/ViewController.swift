@@ -83,6 +83,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
             }
         }
         
+        //MARK: - Alert if the website is not allowed
         let alert = UIAlertController(title: "Sorry, it's blocked", message: "The url you're attempting to access it's not allowed", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok, my bad!", style: .default, handler: nil))
         self.present(alert, animated: true)
@@ -90,4 +91,5 @@ class ViewController: UIViewController, WKNavigationDelegate {
         decisionHandler(.cancel)
     }
 }
+
 
