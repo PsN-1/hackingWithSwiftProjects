@@ -64,19 +64,13 @@ class ViewController: UITableViewController {
                     
                     return
                 } else {
-                    showErrorMessage(
-                        errorTitle: "Word not recognized",
-                        errorMessage: "You just can't made them up, you know!"
-                    )
+                    showErrorMessage(errorTitle: "Word not recognized", errorMessage: "You just can't made them up, you know!")
                 }
             } else {
                 showErrorMessage(errorTitle: "Word already used", errorMessage: "Be more original!")
             }
         } else {
-            showErrorMessage(
-                errorTitle: "Word not possible",
-                errorMessage: "You can't spell that word from \(title!.lowercased())."
-            )
+            showErrorMessage(errorTitle: "Word not possible", errorMessage: "You can't spell that word from \(title!.lowercased()).")
         }
     }
     
