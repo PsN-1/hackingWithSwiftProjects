@@ -4,7 +4,7 @@
 //
 //  Created by Pedro Neto on 25/11/20.
 //
-
+ 
 import UIKit
 
 class ViewController: UITableViewController {
@@ -71,6 +71,7 @@ class ViewController: UITableViewController {
             }
         } else {
             showErrorMessage(errorTitle: "Word not possible", errorMessage: "You can't spell that word from \(title!.lowercased()).")
+            
         }
     }
     
@@ -121,4 +122,3 @@ class ViewController: UITableViewController {
         return cell
     }
 }
-
