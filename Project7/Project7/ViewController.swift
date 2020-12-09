@@ -20,9 +20,9 @@ class ViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "exclamationmark.icloud"), style: .plain, target: self, action: #selector(showAlert))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(inputFilter))
-
         
-//        let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        
+        //        let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         let urlString: String
         
         if navigationController?.tabBarItem.tag == 0 {
@@ -75,28 +75,28 @@ class ViewController: UITableViewController {
         for petition in petitions {
             if petition.title.contains(answer) || petition.body.contains(answer){
                 filterArray.insert(petition, at: 0)
-
+                
             }
         }
         petitions = filterArray
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(unFilter))
         tableView.reloadData()
-
+        
     }
     
     @objc func unFilter() {
         petitions = nonFilterArray
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(inputFilter))
         tableView.reloadData()
-
+        
     }
     
     func parse(json: Data) {
         let decoder = JSONDecoder()
         
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
-            petitions = jsonPetitions.results
-            nonFilterArray = petitions
+            nonFilterArray = jsonPetitions.results
+            petitions = nonFilterArray
             tableView.reloadData()
         }
     }
