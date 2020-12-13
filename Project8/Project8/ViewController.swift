@@ -77,6 +77,8 @@ class ViewController: UIViewController {
         clear.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         view.addSubview(clear)
         
+
+        
         let buttonsview = UIView()
         buttonsview.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonsview)
@@ -169,6 +171,7 @@ class ViewController: UIViewController {
                 present(ac, animated: true)
             }
         } else {
+            
             let ac = UIAlertController(title: "Wrong!", message: "That doesn't seems right", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Try again!", style: .default, handler: nil))
             present(ac, animated: true)
