@@ -45,7 +45,6 @@ class ViewController: UIViewController {
         
         imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.sizeToFit()
         imageView.scalesLargeContentImage = false
         
         view.addSubview(imageView)
@@ -55,11 +54,14 @@ class ViewController: UIViewController {
             scoreLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             scoreLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             
+            wordLabel.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor),
             wordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            wordLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -200),
+            wordLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200),
+            
             
             imageView.topAnchor.constraint(equalTo: wordLabel.bottomAnchor),
             imageView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
 
         ])
     }
