@@ -17,9 +17,17 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: (nil))
+        
+        DispatchQueue.global().async { [weak self] in
+            self?.loadImages()
 
-        performSelector(inBackground: #selector(loadImages), with: nil)
-        tableView.reloadData()
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+//
+//        performSelector(inBackground: #selector(loadImages), with: nil)
+        
     }
     
     @objc func loadImages() {

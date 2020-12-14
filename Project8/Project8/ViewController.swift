@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var scoreLabel: UILabel!
     var letterButtons = [UIButton]()
     
-    var test = UIButton()
     var activatedButtons = [UIButton]()
     var solutions = [String]()
     
