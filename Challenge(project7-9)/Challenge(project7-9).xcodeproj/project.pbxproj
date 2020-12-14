@@ -14,6 +14,13 @@
 		66B9DD40258797DD00CFAB2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD3F258797DD00CFAB2E /* Assets.xcassets */; };
 		66B9DD43258797DD00CFAB2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD41258797DD00CFAB2E /* LaunchScreen.storyboard */; };
 		66B9DD502587AB3900CFAB2E /* handManWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD4F2587AB3900CFAB2E /* handManWords.txt */; };
+		66B9DD6A2587E30F00CFAB2E /* hanger.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD632587E30E00CFAB2E /* hanger.png */; };
+		66B9DD6B2587E30F00CFAB2E /* hanger3.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD642587E30E00CFAB2E /* hanger3.png */; };
+		66B9DD6C2587E30F00CFAB2E /* hanger2.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD652587E30E00CFAB2E /* hanger2.png */; };
+		66B9DD6D2587E30F00CFAB2E /* hanger1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD662587E30E00CFAB2E /* hanger1.png */; };
+		66B9DD6E2587E30F00CFAB2E /* hanger5.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD672587E30E00CFAB2E /* hanger5.png */; };
+		66B9DD6F2587E30F00CFAB2E /* hanger4.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD682587E30F00CFAB2E /* hanger4.png */; };
+		66B9DD702587E30F00CFAB2E /* hanger6.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B9DD692587E30F00CFAB2E /* hanger6.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		66B9DD42258797DD00CFAB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66B9DD44258797DD00CFAB2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B9DD4F2587AB3900CFAB2E /* handManWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = handManWords.txt; path = ../../../../../../Desktop/handManWords.txt; sourceTree = "<group>"; };
+		66B9DD632587E30E00CFAB2E /* hanger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger.png; sourceTree = "<group>"; };
+		66B9DD642587E30E00CFAB2E /* hanger3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger3.png; sourceTree = "<group>"; };
+		66B9DD652587E30E00CFAB2E /* hanger2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger2.png; sourceTree = "<group>"; };
+		66B9DD662587E30E00CFAB2E /* hanger1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger1.png; sourceTree = "<group>"; };
+		66B9DD672587E30E00CFAB2E /* hanger5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger5.png; sourceTree = "<group>"; };
+		66B9DD682587E30F00CFAB2E /* hanger4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger4.png; sourceTree = "<group>"; };
+		66B9DD692587E30F00CFAB2E /* hanger6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanger6.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +80,24 @@
 				66B9DD41258797DD00CFAB2E /* LaunchScreen.storyboard */,
 				66B9DD44258797DD00CFAB2E /* Info.plist */,
 				66B9DD4F2587AB3900CFAB2E /* handManWords.txt */,
+				66B9DD622587E30E00CFAB2E /* hangManImages */,
 			);
 			path = "Challenge(project7-9)";
+			sourceTree = "<group>";
+		};
+		66B9DD622587E30E00CFAB2E /* hangManImages */ = {
+			isa = PBXGroup;
+			children = (
+				66B9DD632587E30E00CFAB2E /* hanger.png */,
+				66B9DD642587E30E00CFAB2E /* hanger3.png */,
+				66B9DD652587E30E00CFAB2E /* hanger2.png */,
+				66B9DD662587E30E00CFAB2E /* hanger1.png */,
+				66B9DD672587E30E00CFAB2E /* hanger5.png */,
+				66B9DD682587E30F00CFAB2E /* hanger4.png */,
+				66B9DD692587E30F00CFAB2E /* hanger6.png */,
+			);
+			name = hangManImages;
+			path = ../../../../../../Desktop/hangManImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +159,14 @@
 			files = (
 				66B9DD502587AB3900CFAB2E /* handManWords.txt in Resources */,
 				66B9DD43258797DD00CFAB2E /* LaunchScreen.storyboard in Resources */,
+				66B9DD6C2587E30F00CFAB2E /* hanger2.png in Resources */,
+				66B9DD6F2587E30F00CFAB2E /* hanger4.png in Resources */,
+				66B9DD6A2587E30F00CFAB2E /* hanger.png in Resources */,
+				66B9DD6E2587E30F00CFAB2E /* hanger5.png in Resources */,
+				66B9DD6D2587E30F00CFAB2E /* hanger1.png in Resources */,
 				66B9DD40258797DD00CFAB2E /* Assets.xcassets in Resources */,
+				66B9DD6B2587E30F00CFAB2E /* hanger3.png in Resources */,
+				66B9DD702587E30F00CFAB2E /* hanger6.png in Resources */,
 				66B9DD3E258797DA00CFAB2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
