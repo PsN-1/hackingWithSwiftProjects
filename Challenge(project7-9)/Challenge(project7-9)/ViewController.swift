@@ -11,11 +11,45 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var scoreLabel: UILabel!
+    var wordLabel: UILabel!
+    
     var allWords = [String]()
     var randomWord = ""
     var usedLetters = [String]()
-    var score = 0
     var chances = 7
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    override func loadView() {
+        view = UIView()
+        view.backgroundColor = .white
+        
+        scoreLabel = UILabel()
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        scoreLabel.textAlignment = .right
+        scoreLabel.text = "Score: 0"
+        view.addSubview(scoreLabel)
+        
+        wordLabel = UILabel()
+        wordLabel.translatesAutoresizingMaskIntoConstraints = false
+        wordLabel.textAlignment = .center
+        wordLabel.font = UIFont.systemFont(ofSize: 42)
+        wordLabel.text = "Hang Man"
+        view.addSubview(wordLabel)
+
+    
+        NSLayoutConstraint.activate([
+            scoreLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            scoreLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            
+            wordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            wordLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
+        ])
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +57,7 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(restartGame))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(getAnswer))
         
+        title = "The Hangman Game"
         loadWords()
         restartGame()
         
@@ -38,18 +73,18 @@ class ViewController: UIViewController {
     //MARK: - BarButtonItens
     @objc func restartGame() {
         
-        //        randomWord = allWords.randomElement()!
-        randomWord = "Rhythm"
+        randomWord = allWords.randomElement()!
+        //        randomWord = "Sleepy"
         usedLetters.removeAll()
-        title = ""
+        wordLabel.text = ""
         score = 0
         chances = 7
         
         for _ in randomWord {
-            title! += "_ "
+            wordLabel.text! += "_ "
         }
     }
-    
+    //MARK: - Prompt answer alert
     @objc func getAnswer() {
         
         let ac = UIAlertController(title: "The Hangman Game!", message: "Type 1 letter" , preferredStyle: .alert)
@@ -70,40 +105,47 @@ class ViewController: UIViewController {
     }
     
     func submit(_ answer: String) {
-        title = ""
+        wordLabel.text = ""
         
-        if randomWord.contains(answer) {
-            usedLetters.insert(answer, at: 0)
+        let lowerAnswer = answer.lowercased()
+        let lowerWord = randomWord.lowercased()
+        
+        if lowerWord.contains(lowerAnswer) && !usedLetters.contains(lowerAnswer) {
+            print(!usedLetters.contains(lowerAnswer))
+            usedLetters.insert(lowerAnswer, at: 0)
             score += 1
+        } else if usedLetters.contains(lowerAnswer) {
+            presentAlert(title: "Already Typed", message: "You've already tried this letter", answer: "Try another")
+            
         } else {
             chances -= 1
         }
         
         if chances > 0 {
-            for letter in randomWord {
+            for letter in lowerWord {
                 let strLetter = String(letter)
                 if usedLetters.contains(strLetter) {
-                    title! += strLetter + " "
+                    wordLabel.text! += strLetter + " "
                 } else {
-                    title! += "_ "
+                    wordLabel.text! += "_ "
                 }
             }
             
         } else {
-            endGame(title: "Game Over!", message: "Sorry you guessed wrong too many times")
+            presentAlert(title: "Game Over!", message: "The word were: \(randomWord)", answer: "Play Again!")
+            restartGame()
         }
         if score == randomWord.count - 1 {
-            endGame(title: "Gratz", message: "You saved the poor man")
+            presentAlert(title: "Gratz!", message: "You saved the poor man", answer: "Try Again!")
+            restartGame()
             
         }
     }
     
-    func endGame(title: String, message: String) {
+    func presentAlert(title: String, message: String, answer: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Play Again!", style: .default, handler: nil))
+        ac.addAction(UIAlertAction(title: answer, style: .default, handler: nil))
         present(ac, animated: true)
-        
-        restartGame()
         
     }
     
@@ -113,7 +155,5 @@ class ViewController: UIViewController {
  Ideas Todo
  
  find images to represent each error
- add a label for the word
  add a keyboard in the screen with disabling letters as touched
- 
  */
