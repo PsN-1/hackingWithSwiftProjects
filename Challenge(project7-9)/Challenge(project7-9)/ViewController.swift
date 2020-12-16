@@ -45,8 +45,6 @@ class ViewController: UIViewController {
         
         imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.scalesLargeContentImage = false
-        
         view.addSubview(imageView)
 
     
@@ -56,12 +54,11 @@ class ViewController: UIViewController {
             
             wordLabel.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor),
             wordLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            wordLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200),
             
-            
-            imageView.topAnchor.constraint(equalTo: wordLabel.bottomAnchor),
-            imageView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor),
-            imageView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+            imageView.topAnchor.constraint(equalTo: wordLabel.bottomAnchor, constant: 30),
+            imageView.widthAnchor.constraint(equalToConstant: 230),
+            imageView.heightAnchor.constraint(equalToConstant: 350),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
         ])
     }
@@ -129,6 +126,7 @@ class ViewController: UIViewController {
                 self!.getAnswer()
             }
         }
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         ac.addAction(submitAction)
         present(ac, animated: true)
@@ -138,8 +136,14 @@ class ViewController: UIViewController {
     func submit(_ answer: String) {
         wordLabel.text = ""
         
+//      Prevents bugs - for words or entry char with Uppercased letters
         let lowerAnswer = answer.lowercased()
         let lowerWord = randomWord.lowercased()
+        
+//      Prevents bugs - For words that use the same letter more than once
+        let str = lowerWord
+        var set = Set<Character>()
+        let squeezedWord = str.filter{ set.insert($0).inserted }
         
         if lowerWord.contains(lowerAnswer) && !usedLetters.contains(lowerAnswer) {
             usedLetters.insert(lowerAnswer, at: 0)
@@ -147,7 +151,7 @@ class ViewController: UIViewController {
             
         } else if usedLetters.contains(lowerAnswer) {
             presentAlert(title: "Already Typed", message: "You've already tried this letter", answer: "Try another")
-            
+          
         } else {
             chances += 1
             imageView.image = UIImage(named: "hanger\(chances)")
@@ -167,7 +171,7 @@ class ViewController: UIViewController {
             presentAlert(title: "Game Over!", message: "The word were: \(randomWord)", answer: "Play Again!")
             restartGame()
         }
-        if score == randomWord.count - 1 {
+        if score == squeezedWord.count {
             presentAlert(title: "Gratz!", message: "You saved the poor man", answer: "Try Again!")
             restartGame()
             
@@ -181,7 +185,6 @@ class ViewController: UIViewController {
         present(ac, animated: true)
         
     }
-    
 }
 
 /* MARK: - To do
