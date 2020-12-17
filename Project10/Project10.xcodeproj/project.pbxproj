@@ -13,6 +13,8 @@
 		660D46FD2588E55C00AC3AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D46FB2588E55C00AC3AC1 /* Main.storyboard */; };
 		660D46FF2588E55D00AC3AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660D46FE2588E55D00AC3AC1 /* Assets.xcassets */; };
 		660D47022588E55D00AC3AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660D47002588E55D00AC3AC1 /* LaunchScreen.storyboard */; };
+		660D470B2588E8CD00AC3AC1 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660D470A2588E8CD00AC3AC1 /* PersonCell.swift */; };
+		66455EE0258A4DD800A28A35 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66455EDF258A4DD800A28A35 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		660D46FE2588E55D00AC3AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		660D47012588E55D00AC3AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		660D47032588E55D00AC3AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		660D470A2588E8CD00AC3AC1 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		66455EDF258A4DD800A28A35 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 				660D46F52588E55C00AC3AC1 /* AppDelegate.swift */,
 				660D46F72588E55C00AC3AC1 /* SceneDelegate.swift */,
 				660D46F92588E55C00AC3AC1 /* ViewController.swift */,
+				66455EDF258A4DD800A28A35 /* Person.swift */,
 				660D46FB2588E55C00AC3AC1 /* Main.storyboard */,
+				660D470A2588E8CD00AC3AC1 /* PersonCell.swift */,
 				660D46FE2588E55D00AC3AC1 /* Assets.xcassets */,
 				660D47002588E55D00AC3AC1 /* LaunchScreen.storyboard */,
 				660D47032588E55D00AC3AC1 /* Info.plist */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66455EE0258A4DD800A28A35 /* Person.swift in Sources */,
 				660D46FA2588E55C00AC3AC1 /* ViewController.swift in Sources */,
 				660D46F62588E55C00AC3AC1 /* AppDelegate.swift in Sources */,
+				660D470B2588E8CD00AC3AC1 /* PersonCell.swift in Sources */,
 				660D46F82588E55C00AC3AC1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
