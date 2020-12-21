@@ -27,6 +27,7 @@ class ViewController: UITableViewController {
         if allWords.isEmpty {
             allWords = ["silkworm"]
         }
+        
         startGame()
     }
     //MARK: - End of viewDidLoad
@@ -34,7 +35,9 @@ class ViewController: UITableViewController {
     @objc func startGame() {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
+        loadUsedWords(title!)
         tableView.reloadData()
+
     }
     
     @objc func promprtForAsnwer(){
@@ -53,11 +56,13 @@ class ViewController: UITableViewController {
     
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
+        let tempWord = title!.lowercased()
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
                     usedWords.insert(lowerAnswer, at: 0)
+                    save(tempWord)
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
@@ -109,6 +114,30 @@ class ViewController: UITableViewController {
         ac.addAction(UIAlertAction(title: "ok", style: .default))
         present(ac, animated: true)
         
+    }
+    
+    func save(_ word: String) {
+//        highestScore = 0 // Reset db
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(usedWords) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: word)
+        } else {
+            print("Failed to save data")
+        }
+    }
+    
+    func loadUsedWords(_ word: String) {
+        let defaults = UserDefaults.standard
+        if let savedScore = defaults.object(forKey: word) as? Data {
+            let jsonDecoder = JSONDecoder()
+            do {
+                usedWords = try jsonDecoder.decode([String].self, from: savedScore)
+            } catch {
+                print("Failed to load data")
+            }
+        }
     }
     
     //MARK: - override func tableView

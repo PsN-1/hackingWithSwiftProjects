@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     var pictures = [String]()
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,9 @@ class ViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         }
-//
 //        performSelector(inBackground: #selector(loadImages), with: nil)
         
+
     }
     
     @objc func loadImages() {
@@ -58,9 +59,38 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
+            let picture = pictures[indexPath.row]
+            vc.selectedImage = picture
+            count = 0
+        
+//            load count from default
+            let defaults = UserDefaults.standard
+            if let savedCount = defaults.object(forKey: picture) as? Data {
+                let jsonDecoder = JSONDecoder()
+                
+                do {
+                    count = try jsonDecoder.decode(Int.self, from: savedCount)
+                } catch {
+                    print("Failed to load data")
+                }
+            }
+            
+            save(picture)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func save(_ picture: String) {
+        count += 1
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(count) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: picture)
+        } else {
+            print("Failed to save data")
+        }
+        print("\(picture) was viewed \(count) times")
     }
     
 }
