@@ -54,7 +54,6 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
 
         dismiss(animated: true)
         present(ac, animated: true)
-
     }
     
     @objc func addNewPhoto() {
