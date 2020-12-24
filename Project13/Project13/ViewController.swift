@@ -12,10 +12,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensity: UISlider!
     @IBOutlet var intensityLabel: UILabel!
+    @IBOutlet var segmentControl: UISegmentedControl!
     
     var currentImage: UIImage!
     var context: CIContext!
     var currentFilter: CIFilter!
+    var keysAvailable = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
+        
+        loadSegmentControl()
+    }
+    
+    func loadSegmentControl() {
+        
+        let inputKeys = currentFilter.inputKeys
+        
+        segmentControl.removeAllSegments()
+        keysAvailable.removeAll()
+        for key in 1..<inputKeys.count {
+            segmentControl.insertSegment(withTitle: inputKeys[key], at: inputKeys.count, animated: true)
+            keysAvailable.append(inputKeys[key])
+        }
+        segmentControl.apportionsSegmentWidthsByContent = true
+        segmentControl.selectedSegmentIndex = 0
     }
     
     @objc func importPicture() {
@@ -33,7 +51,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -46,8 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         applyProcessing()
     }
     
-    @IBAction func changeFIlter(_ sender: UIButton
-    ) {
+    @IBAction func changeFIlter(_ sender: UIButton) {
         let ac = UIAlertController(title: "Choose Filter", message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
@@ -75,7 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-        
+        loadSegmentControl()
         applyProcessing()
     }
     
@@ -90,31 +106,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func intensityChanged(_ sender: Any) {
-        
+        applyProcessing()
+    }
+    
+    @IBAction func segmentChanged(_ sender: Any) {
         applyProcessing()
     }
     
     func applyProcessing() {
         
-        let inputKeys = currentFilter.inputKeys
+        let selectedSegment = keysAvailable[segmentControl.selectedSegmentIndex]
         
-        if inputKeys.contains(kCIInputIntensityKey) {
+        if selectedSegment == "inputIntensity" {
             currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
         }
         
-        if inputKeys.contains(kCIInputRadiusKey) {
+        if selectedSegment == "inputRadius"  {
             currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey)
         }
         
-        if inputKeys.contains(kCIInputScaleKey) {
+        if selectedSegment == "inputScale" {
             currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey)
         }
         
-        if inputKeys.contains(kCIInputCenterKey) {
+        if selectedSegment == "inputCenter" {
             currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey)
         }
-        
-        
         
         guard let outputImage = currentFilter.outputImage else { return }
         
@@ -135,6 +152,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             present(ac, animated: true)
         }
     }
-    
 }
 
