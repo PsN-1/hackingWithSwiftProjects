@@ -58,15 +58,21 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         questionsAsked += 1
         
+        UIView.animate(withDuration: 0.2, delay: 0, animations: { sender.imageView?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2) })
+        
+        sender.imageView?.transform = .identity
+        
         if questionsAsked == 10 {
             if score > highestScore {
                 highestScore = score
                 save()
                 presentAlert(title: "New Record!!", message: "Congratulation, you achieved a higher score")
                 score = 0
+                questionsAsked = 0
             } else {
                 presentAlert(title: "Finished!", message: "You final score is: \(score)")
                 score = 0
+                questionsAsked = 0
             }
             
         } else if sender.tag == correctAnswer {
