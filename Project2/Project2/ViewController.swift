@@ -63,17 +63,17 @@ class ViewController: UIViewController {
         sender.imageView?.transform = .identity
         
         if questionsAsked == 10 {
+            sender.tag == correctAnswer ? (score += 1) : (score -= 1)
+            
             if score > highestScore {
                 highestScore = score
                 save()
                 presentAlert(title: "New Record!!", message: "Congratulation, you achieved a higher score")
-                score = 0
-                questionsAsked = 0
             } else {
                 presentAlert(title: "Finished!", message: "You final score is: \(score)")
-                score = 0
-                questionsAsked = 0
             }
+            score = 0
+            questionsAsked = 0
             
         } else if sender.tag == correctAnswer {
             presentAlert(title: "Correct!", message: "")
