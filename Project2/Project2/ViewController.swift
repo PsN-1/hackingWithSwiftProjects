@@ -56,11 +56,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, animations: {
+            sender.imageView?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2);
+        }) { finished in
+            sender.imageView?.transform = .identity
+            self.checkAnswer(sender)
+        }
+    }
+    
+    func checkAnswer(_ sender: UIButton){
         questionsAsked += 1
-        
-        UIView.animate(withDuration: 0.2, delay: 0, animations: { sender.imageView?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2) })
-        
-        sender.imageView?.transform = .identity
         
         if questionsAsked == 10 {
             sender.tag == correctAnswer ? (score += 1) : (score -= 1)
@@ -94,7 +99,7 @@ class ViewController: UIViewController {
     }
     
     func save() {
-//        highestScore = 0 // Reset db
+        //                highestScore = 0 // Reset db
         let jsonEncoder = JSONEncoder()
         
         if let savedData = try? jsonEncoder.encode(highestScore) {
