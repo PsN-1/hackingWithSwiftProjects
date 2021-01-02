@@ -188,7 +188,6 @@ class ViewController: UIViewController {
 }
 
 /* MARK: - To do
- Ideas Todo
  
  add a keyboard in the screen with disabling letters as touched
  */
