@@ -54,6 +54,7 @@ class DetailViewController: UIViewController {
         capitalTextField.text = selectedCountry?.capital
         subregionTextField.text = selectedCountry?.subregion
         
+        // put the commas in the population number
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         let formattedPopulation = numberFormatter.string(from: NSNumber(value: selectedCountry!.population))

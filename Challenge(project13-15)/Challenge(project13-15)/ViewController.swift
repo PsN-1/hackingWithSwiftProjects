@@ -36,11 +36,15 @@ class ViewController: UITableViewController {
     
     func parse(json: Data) {
         let decoder = JSONDecoder()
-        
-        if let jsonContries: [Country] = try? decoder.decode([Country].self, from: json) {
+        do {
+            let jsonContries: [Country] = try decoder.decode([Country].self, from: json)
             nonFilterArray.append(contentsOf: jsonContries)
             contries = nonFilterArray
             tableView.reloadData()
+        } catch {
+            print("Error decoding Json")
+            print(error)
+            return
         }
     }
     
