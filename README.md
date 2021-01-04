@@ -34,3 +34,13 @@ ___
 
 <img src="ProjectsImages/Challenge(13-15)_1.png" width="150" height="300">___<img src="ProjectsImages/Challenge(13-15)_2.png" width="150" height="300">___<img src="ProjectsImages/Challenge(13-15)_3.png" width="150" height="300">___<img src="ProjectsImages/Challenge(13-15)_4.png" width="150" height="300">
 ___
+#### **_Finish project 16_**
+
+*Created a map app with some capitals locations using:*
+
+* _MKMapView_
+* _MKAnnotation_
+* _MKPinAnnotationView_
+* _CLLocationCoordinate2D_
+
+___
