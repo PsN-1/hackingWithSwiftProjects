@@ -192,3 +192,12 @@ ___
 * _MKPinAnnotationView_
 * _CLLocationCoordinate2D_
 ___
+#### **_Finish project 17 - Space Race_**
+
+*Created a game really fast and really cool, a survive game where a space pilot needs to survive a field of space junk*
+
+* _Per-pixel collision detection_
+* _Advancing particle systems_
+* _Timer_
+* _Linear and angular damping_
+___
