@@ -4,6 +4,22 @@
 ## Challenges
 
 ___
+### **_Challenge of projects 1-3 finished!_**
+
+*The challenge was a to create an app that lists various flags in a table view, when selected slide in to view with the full flag.*
+
+*As a bonus, was add the flag image beside the name of the country.*
+
+<img src="ProjectsImages/Challenge(1-3)_1.png" width="150" height="300">___<img src="ProjectsImages/Challenge(1-3)_2.png" width="300" height="150">
+___		
+### **_Challenge of projects 4-6 finished!_**
+
+*This challenge was pretty simple, create an app that lets people create a shopping list by adding items to a table view.*
+
+<img src="ProjectsImages/Challenge(4-6)_1.png" width="150" height="300">
+
+___	
+		
 ### **_Challenge of projects 7-9 finished!_**
 
 *The challenge was a to make a simple hangman game, but it's was also a bit tricky, and I also got a few ideas.*
