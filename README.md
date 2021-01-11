@@ -212,8 +212,21 @@ ___
 
 *Created a game really fast and really cool, a survive game where a space pilot needs to survive a field of space junk*
 
+*Topics covered:*
+
 * _Per-pixel collision detection_
 * _Advancing particle systems_
 * _Timer_
 * _Linear and angular damping_
+___
+#### **_Finish project 18 - Debugging_**
+
+*This topic was to introduce to a few debuggin techniques*
+
+*Topics covered:*
+
+* _print()_
+* _assert()_
+* _Breakpoints_
+* _View debugging_
 ___
