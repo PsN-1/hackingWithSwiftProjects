@@ -230,3 +230,13 @@ ___
 * _Breakpoints_
 * _View debugging_
 ___
+#### **_Finish project 19 - JavaScript Injection_**
+
+*This project teach how to build a bridge between JavaScript and Swift*
+
+*Some Topics covered:*
+
+* _NotificationCenter_
+* _UITextView_
+* _NSExtensionItem_
+___
