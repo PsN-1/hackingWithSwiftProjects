@@ -240,3 +240,13 @@ ___
 * _UITextView_
 * _NSExtensionItem_
 ___
+#### **_Finish project 20 - Fireworks Night_**
+
+*This project we created a basic space game, but still pretty fun*
+
+*Some Topics covered:*
+
+* _follow()_
+* _UIBezierPath_
+* _for case let_
+___
