@@ -250,3 +250,12 @@ ___
 * _UIBezierPath_
 * _for case let_
 ___
+#### **_Finish project 21 - Local Notifications_**
+
+*Simple project to show how to scheduled a local alert to be shown at a specific day and time*
+
+*Some Topics covered:*
+
+* _UNUserNotificationCenter_
+* _UNNotificationRequest_
+___
