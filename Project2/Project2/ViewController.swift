@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
@@ -38,6 +38,11 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: nil)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Score: 0", style: .done, target: self, action: #selector(showCurrentRecord))
         
+        // Notifications
+        registerLocal()
+        scheduleLocal()
+        
+        // Load high record
         loadHighestScore()
         askQuestion()
     }
@@ -98,6 +103,7 @@ class ViewController: UIViewController {
         present(ac, animated: true)
     }
     
+    // MARK:- Save and load Records Methods
     func save() {
         //                highestScore = 0 // Reset db
         let jsonEncoder = JSONEncoder()
@@ -127,5 +133,40 @@ class ViewController: UIViewController {
             }
         }
     }
-}
 
+
+    // MARK:- Local Notification Methods
+    
+    func registerLocal() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Permission Granted")
+            } else {
+                print("Permission Not Granted")
+            }
+        }
+    }
+
+    func scheduleLocal() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Guess the Flag"
+        content.body = "This is your daily reminder to play our awesome game!"
+        content.categoryIdentifier = "alarm"
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = 9
+        dateComponents.minute = 30
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        center.add(request)
+    }
+}
