@@ -53,6 +53,19 @@ ___
 
 <img src="ProjectsImages/Challenge(13-15)_1.png" width="150" height="300">___<img src="ProjectsImages/Challenge(13-15)_2.png" width="150" height="300">___<img src="ProjectsImages/Challenge(13-15)_3.png" width="150" height="300">___<img src="ProjectsImages/Challenge(13-15)_4.png" width="150" height="300">
 ___
+### **_Challenge of projects 19-21 finished!_**
+
+*The challenge was to create a notes app, with a navigation controller, a table view controller and a detail view controller with a full-screen text view*
+
+* A table view that lists the notes titles
+* A detail view controller that contains a full-screen text view
+* The notes were saved with UserDefaults
+* Add tool bar itens (compose and delete)
+* Add the option to share the text with UIActivityViewController
+* Fixed the keyboard displaying over the text view with NotificationCenter
+
+<img src="ProjectsImages/Challenge(19-21)_1.png" width="150" height="300">___<img src="ProjectsImages/Challenge(19-21)_2.png" width="150" height="300">___<img src="ProjectsImages/Challenge(19-21)_3.png" width="150" height="300">___<img src="ProjectsImages/Challenge(19-21)_4.png" width="150" height="300">
+___
 
 ## Projects
 
