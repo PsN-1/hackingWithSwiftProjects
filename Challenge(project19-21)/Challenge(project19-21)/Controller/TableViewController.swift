@@ -28,7 +28,11 @@ class TableViewController: UITableViewController {
     
     @objc
     func deleteAllNotes() {
-        let ac = UIAlertController(title: "Delete All Notes", message: "If you delete, there's not turning back.", preferredStyle: .alert)
+        let ac = UIAlertController(
+            title: "Delete All Notes",
+            message: "Are you sure? There's no turning back.",
+            preferredStyle: .alert
+        )
         ac.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
             self.notes = []
             self.saveNotes()

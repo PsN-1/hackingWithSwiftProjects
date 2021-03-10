@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
         // MARK:- Navigation Bar Configurations
         
         title = noteName
+        
+        
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -56,7 +59,13 @@ class DetailViewController: UIViewController {
     }
     
     @objc func deleteTapped() {
-        textView.text = ""
+        let ac = UIAlertController(title: "Delete all text", message: "Are you sure?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
+            self.textView.text = ""
+        })
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
     }
     
     @objc func composeTapped() {

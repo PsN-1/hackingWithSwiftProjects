@@ -272,3 +272,12 @@ ___
 * _UNUserNotificationCenter_
 * _UNNotificationRequest_
 ___
+#### **_Finish project 22 - Detect-a-Beacon_**
+
+*Simple project detect and range beacons*
+
+*Some Topics covered:*
+
+* _Core Location_
+* _CLBeaconRegion_
+___
