@@ -281,3 +281,14 @@ ___
 * _Core Location_
 * _CLBeaconRegion_
 ___
+#### **_Finish project 23 - Swifty Ninja_**
+
+*Pretty fun game, similiar to the ninja fruit game, only with penguins*
+
+*Some Topics covered:*
+
+* _SKShapeNode_
+* _AVAudioPlayer_
+* _CaseIterable_
+* _removeFirst_
+___
