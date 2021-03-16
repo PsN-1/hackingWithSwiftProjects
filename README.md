@@ -292,3 +292,12 @@ ___
 * _CaseIterable_
 * _removeFirst_
 ___
+#### **_Finish project 24 - Swift String_**
+
+*Explanation of how strings are different from arrays, how to write extensions and how NSAttributedString lets us add formatting to strings*
+
+*Topics covered:*
+
+* _NSAttributedString_
+* _Extenstions_
+___
