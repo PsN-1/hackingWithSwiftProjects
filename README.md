@@ -66,7 +66,14 @@ ___
 
 <img src="ProjectsImages/Challenge(19-21)_1.png" width="150" height="300">___<img src="ProjectsImages/Challenge(19-21)_2.png" width="150" height="300">___<img src="ProjectsImages/Challenge(19-21)_3.png" width="150" height="300">___<img src="ProjectsImages/Challenge(19-21)_4.png" width="150" height="300">
 ___
+### **_Challenge of projects 22-24 finished!_**
 
+*The challenge was to create some extensions for:*
+
+* UIView - *Animation to scale its size down to 0.0001*
+* Int - *A method that runs a closure as many times as the parameter*
+* Array - *A mutating method, that removes the first instance of the repeated item*
+___
 ## Projects
 
 
