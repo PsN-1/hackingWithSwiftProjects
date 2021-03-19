@@ -308,3 +308,13 @@ ___
 * _NSAttributedString_
 * _Extenstions_
 ___
+#### **_Finish project 25 - Selfie Share_**
+
+*This project was to create a simple peer to peer internet connection*
+
+*Topics covered:*
+
+* _Peer to peer networking_
+* _Collection views_
+* _GCD_
+___
