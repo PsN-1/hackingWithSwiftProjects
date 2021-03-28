@@ -318,3 +318,13 @@ ___
 * _Collection views_
 * _GCD_
 ___
+#### **_Finish project 26 - Marble Maze_**
+
+*This project was to create a game that uses the accelerometer*
+
+*Topics covered:*
+
+* _custom physics bitmasks_
+* _Core Motion_
+* _SKAction_
+___
