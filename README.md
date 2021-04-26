@@ -328,3 +328,13 @@ ___
 * _Core Motion_
 * _SKAction_
 ___
+#### **_Finish project 27 - Core Graphics_**
+
+*Learned about Core Graphics and how it works.*
+
+*Topics covered:*
+
+* _UIGraphicsImageRenderer_
+* _NSAttributedString_
+* _CGRect_
+___
