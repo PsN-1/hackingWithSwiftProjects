@@ -338,3 +338,13 @@ ___
 * _NSAttributedString_
 * _CGRect_
 ___
+#### **_Finish project 28 - Secret Swift_**
+
+*Learned how to save things in the keychain and unlock it with Touch ID or Face ID.*
+
+*Topics covered:*
+
+* _LocalAuthentication_
+* _KeychainWrapper_
+* _evaluatePolicy_
+___
