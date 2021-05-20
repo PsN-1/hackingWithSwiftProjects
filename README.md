@@ -348,3 +348,7 @@ ___
 * _KeychainWrapper_
 * _evaluatePolicy_
 ___
+#### **_Finish project 29 - Exploding Monkeys_**
+
+*Create a very fun game, learning a lot of about mixing UIKit and SpriteKit, texture atlases, scene transitions, and of course destructible terrain*
+___
