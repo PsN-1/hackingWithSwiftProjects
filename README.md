@@ -352,3 +352,7 @@ ___
 
 *Create a very fun game, learning a lot of about mixing UIKit and SpriteKit, texture atlases, scene transitions, and of course destructible terrain*
 ___
+#### **_Finish project 30 - Instruments_**
+
+*Finish the last project in the Hacking with Swift course, the project was all about improving the performance of an existing app, finding and fixing memory leaks and others bugs.*
+___
