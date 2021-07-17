@@ -1,3 +1,6 @@
+<img src="ProjectsImages/100_Days_of_Swift.jpg">
+
+___
 # All the completed Hacking With Swift projects
 
 
